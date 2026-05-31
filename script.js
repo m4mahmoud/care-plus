@@ -64,3 +64,69 @@ form.addEventListener("submit", function (e) {
 
 	window.open(url, "_blank");
 });
+
+const counters = document.querySelectorAll(".counter");
+
+const observer = new IntersectionObserver(
+	(entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				const counter = entry.target;
+				const target = +counter.dataset.target;
+
+				let count = 0;
+
+				const update = () => {
+					const increment = target / 100;
+
+					if (count < target) {
+						count += increment;
+						counter.innerText = Math.ceil(count);
+						requestAnimationFrame(update);
+					} else {
+						counter.innerText = target + "+";
+					}
+				};
+
+				update();
+				observer.unobserve(counter);
+			}
+		});
+	},
+	{
+		threshold: 0.5,
+	},
+);
+
+counters.forEach((counter) => {
+	observer.observe(counter);
+});
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+	item.querySelector(".faq-question").addEventListener("click", () => {
+		// قفل الباقي (Accordion واحد مفتوح)
+		faqItems.forEach((el) => {
+			if (el !== item) {
+				el.classList.remove("active");
+			}
+		});
+
+		// فتح / قفل الحالي
+		item.classList.toggle("active");
+	});
+});
+
+function changeMap(location) {
+	const map = document.getElementById("mapFrame");
+
+	map.src = `https://www.google.com/maps?q=${location}&output=embed`;
+
+	// active class effect
+	document.querySelectorAll(".location").forEach((el) => {
+		el.classList.remove("active");
+	});
+
+	event.currentTarget.classList.add("active");
+}
