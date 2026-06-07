@@ -72,10 +72,11 @@ html {
 }
 
 /* HERO CONTENT */
-.hero-content {
+.hero-content2 {
 	position: relative;
 	max-width: 750px;
 	animation: fadeUp 1s ease;
+	margin-top: 100px;
 }
 
 @keyframes fadeUp {
@@ -135,7 +136,7 @@ p {
    BUTTONS
 ========================= */
 
-.hero-buttons {
+.hero-buttons2 {
 	display: flex;
 	gap: 15px;
 	flex-wrap: wrap;
@@ -609,6 +610,10 @@ button:hover {
 
 	.contact-card i {
 		font-size: 38px;
+	}
+
+	.hero-content2 {
+		margin-top: 30px;
 	}
 }
 
