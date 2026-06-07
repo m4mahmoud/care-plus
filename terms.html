@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>الشروط والأحكام وضمانات الأمان | كير بلس</title>
+		<!-- الروابط الخارجية الأساسية (أيقونات وخطوط احترافية) -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"
+			rel="stylesheet" />
+
+		<style>
+			:root {
+				--primary: #0077b6;
+				--primary-light: #00b4d8;
+				--primary-gradient: linear-gradient(135deg, #00b4d8, #0077b6);
+				--text-main: #0f172a;
+				--text-muted: #64748b;
+				--bg-main: #f8fafc;
+				--bg-card: #ffffff;
+				--border-color: #e2e8f0;
+				--shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+				--shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06);
+				--radius-lg: 16px;
+				--radius-md: 12px;
+				--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			/* إعدادات الصفحة العامة */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				scroll-behavior: smooth;
+			}
+
+			body {
+				font-family: "Tajawal", sans-serif;
+				background-color: var(--bg-main);
+				color: var(--text-main);
+				line-height: 1.8;
+				-webkit-font-smoothing: antialiased;
+			}
+
+			/* الهيدر العلوي / البانر */
+			.legal-hero {
+				background: var(--primary-gradient);
+				color: white;
+				padding: 60px 20px;
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.legal-hero::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="white" stroke-width="1" stroke-opacity="0.05"/></svg>');
+				opacity: 0.3;
+			}
+
+			.hero-container {
+				max-width: 1200px;
+				margin: 0 auto;
+				position: relative;
+				z-index: 2;
+			}
+
+			.hero-logo {
+				font-size: 2.5rem;
+				font-weight: 800;
+				margin-bottom: 15px;
+				display: inline-flex;
+				align-items: center;
+				gap: 12px;
+			}
+
+			.legal-hero h1 {
+				font-size: 2rem;
+				font-weight: 700;
+				margin-bottom: 10px;
+			}
+
+			.badge-update {
+				display: inline-block;
+				background: rgba(255, 255, 255, 0.2);
+				padding: 6px 16px;
+				border-radius: 50px;
+				font-size: 0.85rem;
+				backdrop-filter: blur(5px);
+				font-weight: 500;
+			}
+
+			/* جسم الصفحة الرئيسي (نظام العمودين) */
+			.legal-wrapper {
+				max-width: 1200px;
+				margin: 40px auto;
+				padding: 0 20px;
+				display: grid;
+				grid-template-columns: 300px 1fr;
+				gap: 40px;
+			}
+
+			/* العمود الأيمن: القائمة الجانبية المثبتة */
+			.legal-sidebar {
+				position: sticky;
+				top: 40px;
+				height: fit-content;
+			}
+
+			.sidebar-card {
+				background: var(--bg-card);
+				border-radius: var(--radius-lg);
+				padding: 25px;
+				box-shadow: var(--shadow-md);
+				border: 1px solid var(--border-color);
+			}
+
+			.sidebar-card h3 {
+				font-size: 1.1rem;
+				font-weight: 700;
+				margin-bottom: 20px;
+				color: var(--primary);
+				border-bottom: 2px solid var(--bg-main);
+				padding-bottom: 10px;
+			}
+
+			.toc-list {
+				list-style: none;
+			}
+
+			.toc-item a {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				padding: 12px 15px;
+				color: var(--text-muted);
+				text-decoration: none;
+				font-size: 0.95rem;
+				font-weight: 500;
+				border-radius: var(--radius-md);
+				transition: var(--transition);
+			}
+
+			.toc-item a i {
+				font-size: 1.1rem;
+				width: 24px;
+				text-align: center;
+			}
+
+			.toc-item a:hover {
+				background: var(--bg-main);
+				color: var(--primary);
+				padding-right: 20px;
+			}
+
+			/* العمود الأيسر: محتوى الشروط والسياسات */
+			.legal-content {
+				display: flex;
+				flex-direction: column;
+				gap: 30px;
+			}
+
+			.intro-box {
+				background: var(--bg-card);
+				padding: 30px;
+				border-radius: var(--radius-lg);
+				box-shadow: var(--shadow-sm);
+				border: 1px solid var(--border-color);
+				border-right: 4px solid var(--primary-light);
+			}
+
+			.intro-box p {
+				font-size: 1.1rem;
+				color: var(--text-main);
+				font-weight: 500;
+			}
+
+			/* بطاقات الأقسام (Policy Cards) */
+			.policy-card {
+				background: var(--bg-card);
+				border-radius: var(--radius-lg);
+				padding: 35px;
+				box-shadow: var(--shadow-md);
+				border: 1px solid var(--border-color);
+				transition: var(--transition);
+				scroll-margin-top: 40px; /* يعطي مساحة علوية عند الانتقال عبر الرابط الجانبي */
+			}
+
+			.policy-card:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+			}
+
+			.card-header {
+				display: flex;
+				align-items: center;
+				gap: 15px;
+				margin-bottom: 20px;
+				border-bottom: 1px solid var(--border-color);
+				padding-bottom: 15px;
+			}
+
+			.icon-wrapper {
+				background: var(--primary-gradient);
+				color: white;
+				width: 45px;
+				height: 45px;
+				border-radius: var(--radius-md);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.3rem;
+				box-shadow: 0 4px 10px rgba(0, 180, 216, 0.2);
+			}
+
+			.card-header h2 {
+				font-size: 1.3rem;
+				font-weight: 700;
+				color: var(--primary);
+			}
+
+			.policy-card p {
+				font-size: 1rem;
+				color: #334155;
+				text-align: justify;
+			}
+
+			/* أزرار الفوتر والرجوع */
+			.action-area {
+				text-align: center;
+				margin-top: 20px;
+				margin-bottom: 60px;
+			}
+
+			.btn-home {
+				display: inline-flex;
+				align-items: center;
+				gap: 10px;
+				background: var(--primary-gradient);
+				color: white;
+				padding: 14px 35px;
+				border-radius: 50px;
+				font-weight: 700;
+				text-decoration: none;
+				box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+				transition: var(--transition);
+			}
+
+			.btn-home:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
+			}
+
+			/* شاشات الموبايل والتابلت المتجاوبة */
+			@media (max-width: 992px) {
+				.legal-wrapper {
+					grid-template-columns: 1fr;
+				}
+				.legal-sidebar {
+					position: relative;
+					top: 0;
+				}
+				.legal-hero h1 {
+					font-size: 1.6rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- الهيدر العلوي الشيك -->
+		<header class="legal-hero">
+			<div class="hero-container">
+				<div class="hero-logo">
+					<i class="fa-solid fa-heart-pulse"></i>
+					<span>كير بلس</span>
+				</div>
+				<h1>الشروط والأحكام وضمانات الأمان الطبي</h1>
+				<div class="badge-update">
+					<i class="fa-regular fa-clock" style="margin-left: 5px"></i> آخر
+					تحديث: يونيو 2026
+				</div>
+			</div>
+		</header>
+
+		<!-- المحتوى الرئيسي للموقع -->
+		<main class="legal-wrapper">
+			<!-- القائمة الجانبية لسهولة التنقل والبرستيج الاحترافي -->
+			<aside class="legal-sidebar">
+				<div class="sidebar-card">
+					<h3>أقسام الوثيقة</h3>
+					<ul class="toc-list">
+						<li class="toc-item">
+							<a href="#section1"
+								><i class="fa-solid fa-circle-info"></i> ١. طبيعة المنصة</a
+							>
+						</li>
+						<li class="toc-item">
+							<a href="#section2"
+								><i class="fa-solid fa-user-shield"></i> ٢. معايير التدقيق</a
+							>
+						</li>
+						<li class="toc-item">
+							<a href="#section3"
+								><i class="fa-solid fa-stethoscope"></i> ٣. الأمان الطبي</a
+							>
+						</li>
+						<li class="toc-item">
+							<a href="#section4"
+								><i class="fa-solid fa-truck-medical"></i> ٤. خدمات الطوارئ</a
+							>
+						</li>
+						<li class="toc-item">
+							<a href="#section5"
+								><i class="fa-solid fa-lock"></i> ٥. سرية البيانات</a
+							>
+						</li>
+					</ul>
+				</div>
+			</aside>
+
+			<!-- المحتوى القانوني والسياسات المكتوبة بالأسلوب الناعم والمطمن -->
+			<section class="legal-content">
+				<div class="intro-box">
+					<p>
+						مرحباً بكم في منصة كير بلس للخدمات الطبية. حرصاً منا على تقديم تجربة
+						رعاية صحية منزلية فريدة وآمنة لعيلتكم، تم صياغة هذه الشروط لتنظيم
+						العلاقة وتحديد الأدوار بكل شفافية ووضوح. استخدامكم للمنصة يعني
+						موافقتكم على هذه البنود.
+					</p>
+				</div>
+
+				<!-- بطاقة قسم 1 -->
+				<article class="policy-card" id="section1">
+					<div class="card-header">
+						<div class="icon-wrapper">
+							<i class="fa-solid fa-circle-info"></i>
+						</div>
+						<h2>١. دورنا كمنسق وشريك تكنولوجي موثوق</h2>
+					</div>
+					<p>
+						منصة كير بلس هي منصة رقمية متطورة تجمع بين ابتكار التكنولوجيا ودفئ
+						الرعاية الإنسانية. دورنا الأساسي والفعلي هو تسهيل وصولكم وتنسيق
+						مواعيدكم مع نخبة من مقدمي الرعاية الطبية والتمريضية المستقلين.
+						المنصة تعمل كوسيط تقني ذكي لتنظيم وحجز المواعيد وإدارة الطلبات، ولا
+						تعتبر منشأة طبية أو مستشفى مادي.
+					</p>
+				</article>
+
+				<!-- بطاقة قسم 2 -->
+				<article class="policy-card" id="section2">
+					<div class="card-header">
+						<div class="icon-wrapper">
+							<i class="fa-solid fa-user-shield"></i>
+						</div>
+						<h2>٢. معايير التدقيق الصارمة (الأمان أولاً)</h2>
+					</div>
+					<p>
+						لأن أمان بيوتكم هو أولويتنا القصوى، نلتزم في كير بلس بالالتزام التام
+						بالقوانين واللوائح الطبية المعمول بها في جمهورية مصر العربية. نضمن
+						لكم أن كل طبيب، ممرض، أو مسعف مسجل لدينا يخضع لعملية فحص وتدقيق
+						صارمة تشمل مراجعة (ترخيص مزاولة المهنة الصادر من وزارة الصحة
+						والسكان، وكارنيه النقابة الساري)، لضمان دخول أيدٍ أمينة ومؤهلة
+						بالكامل إلى منزلكم.
+					</p>
+				</article>
+
+				<!-- بطاقة قسم 3 -->
+				<article class="policy-card" id="section3">
+					<div class="card-header">
+						<div class="icon-wrapper">
+							<i class="fa-solid fa-stethoscope"></i>
+						</div>
+						<h2>٣. الأمان الطبي والاستقلالية المهنية</h2>
+					</div>
+					<p>
+						حرصاً على تقديم أعلى مستويات الدقة والنزاهة الطبية، فإننا نضمن لكم
+						أن كافة القرارات العلاجية والإجراءات التمريضية تتم تحت الإشراف
+						والمسؤولية المهنية المباشرة للطبيب أو الممرض المعالج، بموجب ترخيصه
+						الرسمي من وزارة الصحة المصرية ونقابته المهنية. هذا الإستقلال الفني
+						للممارس يضمن لكم رعاية مخصصة وأمينة تتوافق مع البروتوكولات الطبية
+						المعتمدة، دون تدخل من المنصة في المسار العلاجي الفردي للمريض، حيث
+						يقتصر دور المنصة على التنسيق والربط وتيسير الخدمة وتوثيق الجودة.
+					</p>
+				</article>
+
+				<!-- بطاقة قسم 4 -->
+				<article class="policy-card" id="section4">
+					<div class="card-header">
+						<div class="icon-wrapper">
+							<i class="fa-solid fa-truck-medical"></i>
+						</div>
+						<h2>٤. خدمات الطوارئ والدعم اللوجستي للإسعاف</h2>
+					</div>
+					<p>
+						في الأوقات الحرجة، تعمل منصة كير بلس كشريك لوجستي ذكي لتسريع وتأمين
+						وصول الدعم الطبي إليكم. نحن نقوم بربطكم فوراً بأقرب سيارة إسعاف
+						مجهزة ومتاحة ضمن شبكتنا المعتمدة من الشركات الخاصة المرخصة رسمياً من
+						هيئة الإسعاف المصرية. وتبذل المنصة قصارى جهدها لضمان المتابعة
+						اللحظية للطلب وتوجيهه، مع الأخذ في الاعتبار العوامل الخارجية
+						المتغيرة مثل حركة المرور وظروف الطرق لضمان أقصى درجات السلامة
+						والسرعة الممكنة.
+					</p>
+				</article>
+
+				<!-- بطاقة قسم 5 -->
+				<article class="policy-card" id="section5">
+					<div class="card-header">
+						<div class="icon-wrapper"><i class="fa-solid fa-lock"></i></div>
+						<h2>٥. سرية وحرمة البيانات الطبية</h2>
+					</div>
+					<p>
+						بيانات عيلتكم وسجلاتهم الصحية هي أمانة نلتزم بحمايتها بأعلى مشفرات
+						الحماية الرقمية وفقاً لقانون حماية البيانات الشخصية المصري. لا يتم
+						إطلاع أي طرف على الحالة الصحية للمريض إلا الفريق الطبي المعين
+						للزيارة لضمان أعلى دقة في الرعاية.
+					</p>
+				</article>
+
+				<!-- زر العودة للشاشة الرئيسية -->
+				<div class="action-area">
+					<a href="index.html" class="btn-home">
+						<i class="fa-solid fa-house"></i>
+						<span>العودة للصفحة الرئيسية</span>
+					</a>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

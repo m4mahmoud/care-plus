@@ -806,13 +806,15 @@
 					</p>
 
 					<div class="footer-socials">
-						<a href="https://www.facebook.com/share/1CH1vsWsck/"
+						<a href="https://www.facebook.com/share/1CH1vsWsck/" target="_blank"
 							><i class="fa-brands fa-facebook-f"></i
 						></a>
 
 						<a href="#"><i class="fa-brands fa-instagram"></i></a>
 
-						<a href="https://wa.me/201107922778?text=السلام عليكم"
+						<a
+							href="https://wa.me/201107922778?text=السلام عليكم"
+							target="_blank"
 							><i class="fa-brands fa-whatsapp"></i
 						></a>
 
@@ -835,6 +837,16 @@
 						<li><a href="#about">من نحن</a></li>
 
 						<li><a href="#contact">تواصل معنا</a></li>
+
+						<!-- الرابط القانوني الجديد -->
+						<li>
+							<a
+								href="terms.html"
+								target="_blank"
+								style="color: #00b4d8; font-weight: bold"
+								>الشروط والأحكام</a
+							>
+						</li>
 					</ul>
 				</div>
 
@@ -855,13 +867,6 @@
 						<li><a href="#services">تحاليل منزلية</a></li>
 					</ul>
 				</div>
-
-				<!-- 
-				<li><a href="#main">الرئيسية</a></li>
-					<li><a href="#services">الخدمات</a></li>
-					<li><a href="#ambulance">الإسعاف</a></li>
-					<li><a href="#about">من نحن</a></li>
-					<li><a href="#contact">تواصل معنا</a></li> -->
 
 				<!-- CONTACT -->
 
@@ -889,13 +894,306 @@
 
 			<!-- BOTTOM -->
 
-			<div class="footer-bottom">
+			<div
+				class="footer-bottom"
+				style="
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: 10px;
+				">
 				<p>© 2026 جميع الحقوق محفوظة | كير بلس للخدمات الطبية</p>
+				<!-- روابط إخلاء المسؤولية السفلية الشيك -->
+				<div class="legal-links" style="font-size: 0.85rem; opacity: 0.8">
+					<a
+						href="terms.html"
+						target="_blank"
+						style="
+							color: #fff;
+							text-decoration: none;
+							margin: 0 10px;
+							transition: 0.3s;
+						"
+						onmouseover="this.style.color = '#00b4d8'"
+						onmouseout="this.style.color = '#fff'"
+						>الشروط والأحكام وضمانات الأمان الأمان</a
+					>
+					|
+					<a
+						href="terms.html#privacy"
+						target="_blank"
+						style="
+							color: #fff;
+							text-decoration: none;
+							margin: 0 10px;
+							transition: 0.3s;
+						"
+						onmouseover="this.style.color = '#00b4d8'"
+						onmouseout="this.style.color = '#fff'"
+						>سياسة الخصوصية</a
+					>
+				</div>
 			</div>
 		</footer>
-
 		<!-- ================= JS ================= -->
 
 		<script src="./script.js"></script>
+		<!-- ================= TERMS & CONDITIONS MODAL (GATEKEEPER) ================= -->
+		<div id="termsGatekeeperModal" class="terms-gate-overlay">
+			<div class="terms-gate-box">
+				<!-- الهيدر الخاص بالرسالة -->
+				<div class="terms-gate-header">
+					<div class="gate-logo">
+						<i class="fa-solid fa-heart-pulse"></i>
+						<span>كير بلس</span>
+					</div>
+					<h2>مرحباً بكم في منصة كير بلس للخدمات الطبية</h2>
+					<p>برجاء الاطلاع على ضمانات الأمان وشروط الاستخدام لتفعيل المنصة</p>
+				</div>
+
+				<!-- نص السياسات بأسلوب شيك ومطمن -->
+				<div class="terms-gate-body">
+					<div class="gate-policy-item">
+						<h3>
+							<i class="fa-solid fa-circle-info"></i> ١. دورنا كمنسق وشريك
+							تكنولوجي موثوق
+						</h3>
+						<p>
+							منصة كير بلس هي منصة رقمية متطورة تسهل وصولكم وتنسيق مواعيدكم مع
+							نخبة من مقدمي الرعاية الطبية والتمريضية المستقلين. المنصة تعمل
+							كوسيط تقني ذكي لتنظيم وحجز المواعيد وإدارة الطلبات، ولا تعتبر
+							منشأة طبية أو مستشفى مادي.
+						</p>
+					</div>
+
+					<div class="gate-policy-item">
+						<h3>
+							<i class="fa-solid fa-user-shield"></i> ٢. معايير التدقيق الصارمة
+							(الأمان أولاً)
+						</h3>
+						<p>
+							لأن أمان بيوتكم هو أولويتنا القصوى، نضمن لكم أن كل طبيب، ممرض، أو
+							مسعف مسجل لدينا يخضع لعملية فحص وتدقيق صارمة تشمل مراجعة (ترخيص
+							مزاولة المهنة الصادر من وزارة الصحة والسكان، وكارنيه النقابة
+							الساري)، لضمان دخول أيدٍ أمينة ومؤهلة بالكامل إلى منزلكم.
+						</p>
+					</div>
+
+					<div class="gate-policy-item">
+						<h3>
+							<i class="fa-solid fa-stethoscope"></i> ٣. الأمان الطبي
+							والاستقلالية المهنية
+						</h3>
+						<p>
+							كافة القرارات العلاجية والإجراءات التمريضية تتم تحت الإشراف
+							والمسؤولية المهنية المباشرة للطبيب أو الممرض المعالج بموجب ترخيصه
+							الرسمي. هذا الاستقلال الفني للممارس يضمن لكم رعاية مخصصة وأمينة
+							تتوافق مع البروتوكولات الطبية المعتمدة، دون تدخل من المنصة في
+							المسار العلاجي الفردي، حيث يقتصر دور المنصة على التنسيق والربط
+							وتيسير الخدمة وتوثيق الجودة.
+						</p>
+					</div>
+
+					<div class="gate-policy-item">
+						<h3>
+							<i class="fa-solid fa-truck-medical"></i> ٤. خدمات الطوارئ والدعم
+							اللوجستي للإسعاف
+						</h3>
+						<p>
+							في الأوقات الحرجة، تعمل منصة كير بلس كشريك لوجستي ذكي لتسريع
+							وتأمين وصول الدعم الطبي إليكم عبر ربطكم فوراً بأقرب سيارة إسعاف
+							مجهزة ومتاحة ضمن شبكتنا المعتمدة من الشركات الخاصة المرخصة رسمياً
+							من هيئة الإسعاف المصرية، مع الأخذ في الاعتبار العوامل الخارجية
+							المتغيرة مثل حركة المرور وظروف الطرق لضمان أقصى درجات السلامة.
+						</p>
+					</div>
+
+					<div class="gate-policy-item">
+						<h3>
+							<i class="fa-solid fa-lock"></i> ٥. سرية وحرمة البيانات الطبية
+						</h3>
+						<p>
+							بيانات عيلتكم وسجلاتهم الصحية هي أمانة نلتزم بحمايتها بأعلى مشفرات
+							الحماية الرقمية وفقاً لقانون حماية البيانات الشخصية المصري، ولا
+							يتم إطلاع أي طرف عليها إلا الفريق الطبي المعين للزيارة.
+						</p>
+					</div>
+				</div>
+
+				<!-- أزرار الموافقة -->
+				<div class="terms-gate-footer">
+					<button id="acceptTermsGateBtn" class="gate-accept-btn">
+						أوافق وتفعيل تشغيل المنصة
+					</button>
+					<p class="gate-note">
+						* باستمراركم في استخدام المنصة، فإنكم توافقون على بنود الأمان
+						المذكورة أعلاه.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- ================= CSS STYLING (يمكنك نقله لملف الـ CSS الخاص بك) ================= -->
+		<style>
+			.terms-gate-overlay {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(15, 23, 42, 0.75); /* خلفية داكنة رايقة */
+				backdrop-filter: blur(8px); /* تأثير ضبابي للخلفية */
+				display: none; /* بيتحكم فيه الـ JS */
+				justify-content: center;
+				align-items: center;
+				z-index: 999999; /* عشان يغطي أي عنصر تاني في الموقع */
+				padding: 20px;
+				box-sizing: border-box;
+			}
+
+			.terms-gate-box {
+				background: #ffffff;
+				width: 100%;
+				max-width: 650px;
+				max-height: 85vh;
+				border-radius: 20px;
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+				display: flex;
+				flex-direction: column;
+				animation: gateSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+				overflow: hidden;
+			}
+
+			.terms-gate-header {
+				background: linear-gradient(135deg, #00b4d8, #0077b6);
+				color: white;
+				padding: 25px 20px;
+				text-align: center;
+			}
+
+			.terms-gate-header .gate-logo {
+				font-size: 1.8rem;
+				font-weight: bold;
+				margin-bottom: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 10px;
+			}
+
+			.terms-gate-header h2 {
+				font-size: 1.3rem;
+				margin: 5px 0;
+			}
+
+			.terms-gate-header p {
+				font-size: 0.9rem;
+				opacity: 0.9;
+				margin: 0;
+			}
+
+			.terms-gate-body {
+				padding: 25px;
+				overflow-y: auto; /* سكرول داخلي للنصوص */
+				flex: 1;
+				background: #f8fafc;
+			}
+
+			.gate-policy-item {
+				background: white;
+				padding: 15px;
+				border-radius: 12px;
+				margin-bottom: 15px;
+				border: 1px solid #e2e8f0;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+			}
+
+			.gate-policy-item h3 {
+				color: #0077b6;
+				font-size: 1rem;
+				margin-top: 0;
+				margin-bottom: 8px;
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+
+			.gate-policy-item p {
+				font-size: 0.9rem;
+				color: #475569;
+				line-height: 1.6;
+				margin: 0;
+				text-align: justify;
+			}
+
+			.terms-gate-footer {
+				padding: 20px;
+				background: white;
+				border-top: 1px solid #e2e8f0;
+				text-align: center;
+			}
+
+			.gate-accept-btn {
+				background: linear-gradient(135deg, #00b4d8, #0077b6);
+				color: white;
+				border: none;
+				padding: 14px 40px;
+				font-size: 1.1rem;
+				font-weight: bold;
+				border-radius: 50px;
+				cursor: pointer;
+				box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+				transition: 0.3s ease;
+				width: 80%;
+			}
+
+			.gate-accept-btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
+			}
+
+			.gate-note {
+				font-size: 0.8rem;
+				color: #94a3b8;
+				margin-top: 10px;
+				margin-bottom: 0;
+			}
+
+			/* إنيميشن ظهور شيك */
+			@keyframes gateSlideUp {
+				from {
+					transform: translateY(50px);
+					opacity: 0;
+				}
+				to {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+		</style>
+
+		<!-- ================= JAVASCRIPT LOGIC ================= -->
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const gateModal = document.getElementById("termsGatekeeperModal");
+				const acceptGateBtn = document.getElementById("acceptTermsGateBtn");
+
+				// الفحص الذكي: هل العميل وافق قبل كدا على هذا الجهاز؟
+				if (!localStorage.getItem("careplus_gate_accepted")) {
+					// لو موافقش، اظهر النافذة واقفل سكرول الصفحة الرئيسية
+					gateModal.style.display = "flex";
+					document.body.style.overflow = "hidden";
+				}
+
+				// عند الضغط على زر الموافقة
+				acceptGateBtn.addEventListener("click", function () {
+					// احفظ الموافقة في المتصفح للأبد
+					localStorage.setItem("careplus_gate_accepted", "true");
+					// اخفي النافذة ورجّع السكرول الطبيعي للموقع
+					gateModal.style.display = "none";
+					document.body.style.overflow = "auto";
+				});
+			});
+		</script>
 	</body>
 </html>
